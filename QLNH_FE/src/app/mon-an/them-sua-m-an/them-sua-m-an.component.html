@@ -1,0 +1,33 @@
+<div class="row">
+    <div  class="col-sm-5">   
+    <img [src]="duongDanAnh" alt="Anh Mon An" width="200px"> 
+    <input class="form-control" (change)="uploadPhoto($event)" type="file"/>
+
+     </div>
+    <div  class="col-sm-7">
+        <label class="col-sm-3"> Tên Món Ăn</label>
+<div class=" col-sm-9">
+<input class="form-control" [(ngModel)]="tenThucDon" />
+
+</div>
+<br>
+<label class="col-sm-3">Thực Đơn</label>
+<div class=" col-sm-9">
+<select class="form-control" [(ngModel)]="thucDon" >
+    <option>--   Chọn Thực Đơn   --</option>
+    <option *ngFor="let tDon of dsTenThucDon">{{tDon.TenThucDon}}</option>
+</select>
+</div>
+
+    </div>
+
+</div>
+
+
+
+<br>
+
+<button class="btn btn-primary" (click)="themThucDon()" *ngIf=" maThucDon == 0 "> Thêm Món Ăn </button>
+  
+<button class="btn btn-primary" (click)="suaThucDon()" *ngIf=" maThucDon != 0 ">Sửa Món Ăn</button>
+
